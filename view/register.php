@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="../assets/img/apple-icon.png"
+      href="./assets/img/apple-icon.png"
     />
     <link
       rel="stylesheet"
@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
     />
-    <title>Login | Parking Manager</title>
+    <title>Register | Parking Manager</title>
   </head>
   <body class="text-gray-800 antialiased">
     <nav
@@ -46,18 +46,6 @@
           class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
           id="example-collapse-navbar"
         >
-          <!-- <ul class="flex flex-col lg:flex-row list-none mr-auto">
-            <li class="flex items-center">
-              <a
-                class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/login"
-                ><i
-                  class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
-                ></i>
-                Docs</a
-              >
-            </li>
-          </ul> -->
           <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li class="flex items-center">
               <a
@@ -105,42 +93,34 @@
                 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0"
               >
                 <div class="rounded-t mb-0 px-6 py-6">
-                  <div class="text-center mb-3">
-                    <h6 class="text-gray-600 text-sm font-bold">
-                      Sign in with
+                  <div class="text-center mb-3 ">
+                    <h6 class="text-gray-600 text-sm font-bold uppercase">
+                      Registrate para comenzar
                     </h6>
                   </div>
-                  <div class="btn-wrapper text-center">
-                    <button
-                      class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
-                      type="button"
-                      style="transition: all 0.15s ease 0s;"
-                    >
-                      <img
-                        alt="..."
-                        class="w-5 mr-1"
-                        src="../assets/img/github.svg"
-                      />Github</button
-                    ><button
-                      class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
-                      type="button"
-                      style="transition: all 0.15s ease 0s;"
-                    >
-                      <img
-                        alt="..."
-                        class="w-5 mr-1"
-                        src="../assets/img/google.svg"
-                      />Google
-                    </button>
-                  </div>
+                  
                   <hr class="mt-6 border-b-1 border-gray-400" />
                 </div>
+
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                  <div class="text-gray-500 text-center mb-3 font-bold">
-                    <small>Or sign in with credentials</small>
-                  </div>
-                  <form>
-                    <div class="relative w-full mb-3">
+                  
+                <!--Aqui comienza el formulario-->
+                  <form method="post" action=""> 
+                  <div class="relative w-full mb-3"> <!--Username-->
+                      <label
+                        class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                        >Username</label
+                      ><input
+                        type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Username"
+                        style="transition: all 0.15s ease 0s;"
+                        name="username"
+                      />
+                    </div> <!--Termina el username-->
+
+                    <div class="relative w-full mb-3"> <!--Email-->
                       <label
                         class="block uppercase text-gray-700 text-xs font-bold mb-2"
                         for="grid-password"
@@ -150,8 +130,10 @@
                         class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Email"
                         style="transition: all 0.15s ease 0s;"
+                        name="email"
                       />
-                    </div>
+                    </div> <!--Termina el email-->
+
                     <div class="relative w-full mb-3">
                       <label
                         class="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -162,6 +144,7 @@
                         class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Password"
                         style="transition: all 0.15s ease 0s;"
+                        name="password"
                       />
                     </div>
                     <div>
@@ -177,15 +160,16 @@
                       >
                     </div>
                     <div class="text-center mt-6">
-                      <button
+                        <a
                         class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                        type="button"
+                        type="submit"
                         style="transition: all 0.15s ease 0s;"
+                        href="./registerCompany.php"
+                        
                       >
-                        Sign In
-                      </button>
+                        Sign Up
+                      </a>
                     </div>
-                    <a href="./register.php">Aun no tengo cuenta</a>
                   </form>
                 </div>
               </div>

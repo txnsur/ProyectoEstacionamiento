@@ -4,12 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="../assets/img/apple-icon.png"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -18,7 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
     />
-    <title>Login | Parking Manager</title>
+    <title>Register | Parking Manager</title>
   </head>
   <body class="text-gray-800 antialiased">
     <nav
@@ -46,18 +40,6 @@
           class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
           id="example-collapse-navbar"
         >
-          <!-- <ul class="flex flex-col lg:flex-row list-none mr-auto">
-            <li class="flex items-center">
-              <a
-                class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/login"
-                ><i
-                  class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
-                ></i>
-                Docs</a
-              >
-            </li>
-          </ul> -->
           <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li class="flex items-center">
               <a
@@ -93,6 +75,7 @@
         </div>
       </div>
     </nav>
+
     <main>
       <section class="absolute w-full h-full">
         <div
@@ -105,42 +88,34 @@
                 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0"
               >
                 <div class="rounded-t mb-0 px-6 py-6">
-                  <div class="text-center mb-3">
-                    <h6 class="text-gray-600 text-sm font-bold">
-                      Sign in with
+                  <div class="text-center mb-3 ">
+                    <h6 class="text-gray-600 text-sm font-bold uppercase">
+                      Registrate para comenzar
                     </h6>
                   </div>
-                  <div class="btn-wrapper text-center">
-                    <button
-                      class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
-                      type="button"
-                      style="transition: all 0.15s ease 0s;"
-                    >
-                      <img
-                        alt="..."
-                        class="w-5 mr-1"
-                        src="../assets/img/github.svg"
-                      />Github</button
-                    ><button
-                      class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
-                      type="button"
-                      style="transition: all 0.15s ease 0s;"
-                    >
-                      <img
-                        alt="..."
-                        class="w-5 mr-1"
-                        src="../assets/img/google.svg"
-                      />Google
-                    </button>
-                  </div>
+                  
                   <hr class="mt-6 border-b-1 border-gray-400" />
                 </div>
+
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                  <div class="text-gray-500 text-center mb-3 font-bold">
-                    <small>Or sign in with credentials</small>
-                  </div>
-                  <form>
-                    <div class="relative w-full mb-3">
+                  
+                <!--Aqui comienza el formulario-->
+                  <form method="post" action="" class="relative mt-8 mb-8"> 
+                  <div class="relative w-full mb-3"> <!--Nombre de la empresa-->
+                      <label
+                        class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                        >Nombre de la empresa</label
+                      ><input
+                        type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Coca-Cola"
+                        style="transition: all 0.15s ease 0s;"
+                        name="username"
+                      />
+                    </div> <!--Termina el nombre de la empresa-->
+
+                    <div class="relative w-full mb-3"> <!--Correo electronico de la empresa-->
                       <label
                         class="block uppercase text-gray-700 text-xs font-bold mb-2"
                         for="grid-password"
@@ -150,20 +125,94 @@
                         class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Email"
                         style="transition: all 0.15s ease 0s;"
+                        name="email"
                       />
-                    </div>
-                    <div class="relative w-full mb-3">
+                    </div> <!--Termina el correo electronico de la empresa-->
+
+                    <div class="relative w-full mb-3"> <!--Direccion de la empresa-->
                       <label
                         class="block uppercase text-gray-700 text-xs font-bold mb-2"
                         for="grid-password"
-                        >Password</label
+                        >Direccion de la empresa</label
                       ><input
-                        type="password"
+                        type="text"
                         class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                        placeholder="Password"
+                        placeholder="Tecate-Libre 22253"
                         style="transition: all 0.15s ease 0s;"
+                        name="username"
                       />
-                    </div>
+                    </div> <!--Termina la direccion de la empresa-->
+
+                    <div class="relative w-full mb-3"> <!--Pais de la empresa-->
+                      <label
+                        class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                        >Pais</label
+                      ><input
+                        type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Tecate-Libre 22253"
+                        style="transition: all 0.15s ease 0s;"
+                        name="username"
+                      />
+                    </div> <!--Termina la pais de la empresa-->
+
+                    <div class="relative w-full mb-3"> <!--Estado de la empresa-->
+                      <label
+                        class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                        >Estado</label
+                      ><input
+                        type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Tecate-Libre 22253"
+                        style="transition: all 0.15s ease 0s;"
+                        name="username"
+                      />
+                    </div> <!--Termina la Estado de la empresa-->
+
+                    <div class="relative w-full mb-3"> <!--Ciudad de la empresa-->
+                      <label
+                        class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                        >Ciudad</label
+                      ><input
+                        type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Tecate-Libre 22253"
+                        style="transition: all 0.15s ease 0s;"
+                        name="username"
+                      />
+                    </div> <!--Termina la Ciudad de la empresa-->
+
+                    <div class="relative w-full mb-3"> <!--Codigo postal de la empresa-->
+                      <label
+                        class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                        >Codigo postal</label
+                      ><input
+                        type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Tecate-Libre 22253"
+                        style="transition: all 0.15s ease 0s;"
+                        name="username"
+                      />
+                    </div> <!--Termina la Codigo postal de la empresa-->
+
+                    <div class="relative w-full mb-3"> <!--Telefono de la empresa-->
+                      <label
+                        class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                        >Telefono</label
+                      ><input
+                        type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Tecate-Libre 22253"
+                        style="transition: all 0.15s ease 0s;"
+                        name="username"
+                      />
+                    </div> <!--Termina la Telefono de la empresa-->
+
                     <div>
                       <label class="inline-flex items-center cursor-pointer"
                         ><input
@@ -177,34 +226,23 @@
                       >
                     </div>
                     <div class="text-center mt-6">
-                      <button
+                      <a
                         class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                        type="button"
                         style="transition: all 0.15s ease 0s;"
+                        href="./membership.php"
                       >
-                        Sign In
-                      </button>
+                        Sign Up
+                    </a>
                     </div>
-                    <a href="./register.php">Aun no tengo cuenta</a>
                   </form>
-                </div>
-              </div>
-              <div class="flex flex-wrap mt-6">
-                <div class="w-1/2">
-                  <a href="#pablo" class="text-gray-300"
-                    ><small>Forgot password?</small></a
-                  >
-                </div>
-                <div class="w-1/2 text-right">
-                  <a href="#pablo" class="text-gray-300"
-                    ><small>Create new account</small></a
-                  >
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <footer class="absolute w-full bottom-0 bg-gray-900 pb-6">
+
+
+        <footer class="relative w-full bottom-0 bg-gray-900 pb-6 mt-16">
           <div class="container mx-auto px-4">
             <hr class="mb-6 border-b-1 border-gray-700" />
             <div

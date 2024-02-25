@@ -4,7 +4,7 @@
 
     if(isset($_SESSION['user'])){ //Validamos si aun no se ha definido nuestro cliente por usuario.
         //Creamos un objeto que sea de nuestro cliente para obtener todos sus valores.
-        include(__DIR__."/data/class/client.php");
+        include_once(__DIR__."/data/class/client.php");
         $client = new Client();
 
 
@@ -21,7 +21,7 @@
         $user = 'Welcome '.$_SESSION['user']; //Le damos un valor a user con la bienvenida.
 
         //Validar si el cliente ya ha comprado nuestro servicios.
-        include(__DIR__."/data/class/licenses.php");
+        include_once(__DIR__."/data/class/licenses.php");
         $license = new Licenses();
         $data = $license->getLicensesDuration($_SESSION['client_id']);
         if ($data == "aprobado") {

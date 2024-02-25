@@ -1,4 +1,4 @@
-<?php echo __DIR__; ?>
+<?php echo "<p class='text-white'>".__DIR__."</p>"; ?>
 <?php include_once __DIR__."/../../app/session.php"; ?>
 <!DOCTYPE html>
 <html>

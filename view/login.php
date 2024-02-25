@@ -37,7 +37,7 @@
                   <label class="inline-flex items-center cursor-pointer"><input id="customCheckLogin" type="checkbox" class="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5" style="transition: all 0.15s ease 0s;" /><span class="ml-2 text-sm font-semibold text-gray-700">Remember me</span></label>
                 </div>
                 <div class="text-center mt-6">
-                  <button class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style="transition: all 0.15s ease 0s;">
+                  <button onclick="iniciarSesion()" class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="button" style="transition: all 0.15s ease 0s;">
                     Sign In
                   </button>
                 </div>
@@ -56,6 +56,9 @@
         </div>
       </div>
     </div>
+
+    <!--Inclumos los modales-->
+    <?php include_once "components/modals.php"; ?>
 
     <!--Inclumos los footers de los logins-->
     <?php include_once "components/footer_2.php"; ?>

@@ -26,6 +26,24 @@
             </div>
         </dialog>
 
+        <dialog id="iniciar" class="modal bg-black-300 text-white">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">Verificando...</h3>                
+            </div>
+        </dialog>
+
+        <dialog id="cuentaEncontrada" class="modal bg-black-300 text-white">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">Cuenta encontrada!</h3>                
+            </div>
+        </dialog>
+
+        <dialog id="logout" class="modal bg-black-300 text-white">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">Cerrando sesion...</h3>                
+            </div>
+        </dialog>
+
         <!--Efecto de esperar 2 segundos-->
         <script>
             function confirmarCompra() {
@@ -39,5 +57,25 @@
                 setTimeout(function() {
                     window.location.href = "login.php";
                 }, 5000); // 2000 milisegundos = 2 segundos
+            }
+
+            function iniciarSesion() {
+                iniciar.showModal();
+
+                setTimeout(function() {
+                    cuentaEncontrada.showModal();
+                }, 2000); // 2000 milisegundos = 2 segundos
+
+                setTimeout(function() {
+                    window.location.href = "client/dashboard.php";
+                }, 3000); // 2000 milisegundos = 2 segundos
+            }
+
+            function  cerrarSesion(){
+                logout.showModal();
+
+                setTimeout(function() {
+                    window.location.href = "../../index.php";
+                }, 3000); // 2000 milisegundos = 2 segundos
             }
         </script>

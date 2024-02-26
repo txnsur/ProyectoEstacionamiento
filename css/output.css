@@ -2236,6 +2236,14 @@ html {
   top: auto;
 }
 
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -2414,6 +2422,14 @@ html {
 
 .ml-5 {
   margin-left: 1.25rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
 .block {

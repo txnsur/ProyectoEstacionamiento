@@ -1,7 +1,7 @@
 <!--Incluimos el header de la pagina-->
 <?php include_once "components/header_2.php"; ?>
 
-<main>
+<main class="absolute bg-white w-full h-full z-10">
   <section class="absolute w-full h-full">
     <div class="absolute top-0 w-full h-full bg-gray-900"></div>
     <div class="container mx-auto px-4 h-full">
@@ -23,35 +23,35 @@
               <!--Aqui comienza el formulario-->
               <form method="post" action="" class="relative mt-8 mb-8">
                 <div class="relative w-full mb-3"> <!--Nombre de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Nombre de la empresa</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Coca-Cola" style="transition: all 0.15s ease 0s;" name="username" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Nombre de la empresa</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Coca-Cola" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina el nombre de la empresa-->
 
                 <div class="relative w-full mb-3"> <!--Correo electronico de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Email</label><input type="email" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Email" style="transition: all 0.15s ease 0s;" name="email" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Email</label><input type="email" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Email" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina el correo electronico de la empresa-->
 
                 <div class="relative w-full mb-3"> <!--Direccion de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Direccion de la empresa</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tecate-Libre 22253" style="transition: all 0.15s ease 0s;" name="username" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Direccion de la empresa</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tecate-Libre 22253" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina la direccion de la empresa-->
 
                 <div class="relative w-full mb-3"> <!--Pais de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Pais</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tecate-Libre 22253" style="transition: all 0.15s ease 0s;" name="username" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Pais</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Mexico" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina la pais de la empresa-->
 
                 <div class="relative w-full mb-3"> <!--Estado de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Estado</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tecate-Libre 22253" style="transition: all 0.15s ease 0s;" name="username" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Estado</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Baja California" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina la Estado de la empresa-->
 
                 <div class="relative w-full mb-3"> <!--Ciudad de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Ciudad</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tecate-Libre 22253" style="transition: all 0.15s ease 0s;" name="username" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Ciudad</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tijuana" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina la Ciudad de la empresa-->
 
                 <div class="relative w-full mb-3"> <!--Codigo postal de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Codigo postal</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tecate-Libre 22253" style="transition: all 0.15s ease 0s;" name="username" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Codigo postal</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="22253" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina la Codigo postal de la empresa-->
 
                 <div class="relative w-full mb-3"> <!--Telefono de la empresa-->
-                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Telefono</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="Tecate-Libre 22253" style="transition: all 0.15s ease 0s;" name="username" />
+                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Telefono</label><input type="text" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="664 921 9211" style="transition: all 0.15s ease 0s;"/>
                 </div> <!--Termina la Telefono de la empresa-->
 
                 <div>
@@ -62,6 +62,8 @@
                     Sign Up
                   </a>
                 </div>
+
+                <div class="mt-5"><a href="register.php">Volver atras</a></div>
               </form>
             </div>
           </div>
@@ -70,4 +72,4 @@
     </div>
 
     <!--Inclumos los footers de los logins-->
-    <?php include_once "components/footer_2.php"; ?>
+    <?php //include_once "components/footer_2.php"; ?>

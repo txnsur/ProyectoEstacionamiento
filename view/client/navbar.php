@@ -25,35 +25,31 @@
         <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden" id="example-collapse-sidebar">
           <ul class="md:flex-col md:min-w-full flex flex-col list-none">
             <li class="items-center hover:bg-gray-100">
-              <a class=" text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="#/dashboard"><i class="fas fa-tv opacity-75 mr-2 text-sm"></i>
+              <a href="dashboard.php" class=" text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"><i class="fas fa-tv opacity-75 mr-2 text-sm"></i>
                 Dashboard</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-              <a href="parking.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block" ><i class="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>
+              <a href="parking.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>
                 Parking</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-              <a class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block" href="#/profile"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
+              <a href="carros.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
                 Carros</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-              <a class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block" href="#/login"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
+              <a href="empleados.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
                 Empleados</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-              <a class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block" href="#/login"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
-                Empleados</a>
-            </li>
-            <li class="items-center hover:bg-gray-100">
-              <a class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block" href="#/login"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
+              <a href="tarjetas.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
                 Tarjetas</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-              <a class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block" href="#/login"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
+              <a href="visitantes.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
                 Visitantes</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-              <a class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block" href="#/login"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
+              <a href="historial.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
                 Historial</a>
             </li>
           </ul>
@@ -67,7 +63,7 @@
                 Configuracion</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-            <?php include_once "../components/modals.php";?>
+              <?php include_once "../components/modals.php"; ?>
               <button onclick="cerrarSesion()" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"><i class="fas fa-paint-brush mr-2 text-blueGray-400 text-base"></i>
                 Logout</button>
             </li>
@@ -81,6 +77,26 @@
       <nav class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
         <div class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4">
           <a class="text-white text-sm uppercase hidden lg:inline-block font-semibold" href="dashboard.php">Dashboard</a>
+          <div class="ml-5 text-sm breadcrumbs" id="documents-section">
+            <ul>
+              <li>
+                <a>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                  </svg>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                  </svg>
+                  Documents
+                </a>
+              </li>
+            </ul>
+          </div>
           <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
             <div class="relative flex w-full flex-wrap items-stretch">
               <span class="z-10 h-full leading-snug font-normal text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"><i class="fas fa-search"></i></span>

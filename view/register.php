@@ -32,18 +32,23 @@
                   <input name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required type="email" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="pepe123@gmail.com" style="transition: all 0.15s ease 0s;"  />
                 </div> <!--Termina el email-->
 
+                <span id="errorCorreo" style="color: red;" class="mb-2"></span>
+
                 <div class="relative w-full mb-3"> <!--Password-->
                   <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="grid-password">Contraseña</label>
-                  <input name="password"  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" minlength="4" oninput="validarPassword()" required  type="password" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="******" style="transition: all 0.15s ease 0s;" />
+                  <input id="password" name="password"  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" minlength="4" oninput="validarPassword()" required  type="password" class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" placeholder="******" style="transition: all 0.15s ease 0s;" />
                 </div> <!--Termina el password-->
 
+                 <!--Este span es el contenedor del cuerpo del script-->
+                 <span id="mensajeError" style="color: red;" class="mb-2"></span>
+
                 <div>
-                  <label class="inline-flex items-center cursor-pointer">
+                  <label class="inline-flex items-center cursor-pointer mt-2">
                     <input id="customCheckLogin" type="checkbox" class="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5" style="transition: all 0.15s ease 0s;"/> <span class="ml-2 text-sm font-semibold text-gray-700">Remember me</span></label>
                 </div>
 
                 <div class="text-center mt-6">
-                  <input class="bg-gray-900 cursor-pointer text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="submit" value="Registrarse" style="transition: all 0.15s ease 0s;" href="./registerCompany.php">
+                  <input class="bg-gray-900 cursor-pointer text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full" type="submit" value="Siguiente" style="transition: all 0.15s ease 0s;" href="./registerCompany.php">
                   </input>
                 </div>
 
@@ -67,6 +72,9 @@
         </div>
       </div>
     </div>
+
+    <script src="../js/validarCorreo.js"></script> 
+    <script src="../js/validarPassword.js"></script> 
 
     <!--Inclumos los footers de los logins-->
     <?php include_once "components/footer_2.php"; ?>

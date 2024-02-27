@@ -1,5 +1,15 @@
 <!--Incluimos el header de la pagina-->
 <?php include_once "components/header_2.php"; ?>
+<?php 
+    $_SESSION['nombreEmpresa'] = $_POST['empresa'];
+    $_SESSION['emailEmpresa'] = $_POST['email'];
+    $_SESSION['direccionEmpresa'] = $_POST['direccion'];
+    $_SESSION['paisEmpresa'] = $_POST['pais'];
+    $_SESSION['estadoEmpresa'] = $_POST['estado'];
+    $_SESSION['ciudadEmpresa'] = $_POST['ciudad'];
+    $_SESSION['codigoEmpresa'] = $_POST['postal'];
+    $_SESSION['telEmpresa'] = $_POST['tel'];
+?>
 
 <!--Cuerpo del HTML-->
 <main>

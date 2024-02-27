@@ -7,7 +7,6 @@
         include (__DIR__."/data/class/client.php");
         $client = new Client();
 
-
         //Obtenemos el cliente por la llave foranea que seria el User.
         //Llamamos al metodo del cliente que retorna la pk del cliente asociada con la pk usuario.
         $myclient = $client->getClientByUser($_SESSION['user_id']);

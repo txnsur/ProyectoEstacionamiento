@@ -32,7 +32,7 @@
             <p class="py-6">${details}</p>
             <div class="modal-action">
                 <form method="dialog">
-                    <button class="btn" onclick="confirmarCompra('${membership}')">Confirmar compra</button>
+                    <button class="btn" onclick="confirmarCompra()">Confirmar compra</button>
                 </form>
             </div>
         `;
@@ -62,14 +62,6 @@
             default:
                 return '';
         }
-    }
-
-
-    // Función para confirmar compra
-    function confirmarCompra(membership) {
-        // Lógica para confirmar la compra según la membresía seleccionada
-        // Puedes implementar la lógica de confirmación y procesamiento de pago aquí
-        alert('Compra confirmada para la membresía: ' + membership);
     }
 </script>
 
@@ -115,7 +107,7 @@
         }, 2000); // 2000 milisegundos = 2 segundos
 
         setTimeout(function() {
-            window.location.href = "login.php";
+            window.location.href = "../app/register.php";
         }, 5000); // 2000 milisegundos = 2 segundos
     }
 

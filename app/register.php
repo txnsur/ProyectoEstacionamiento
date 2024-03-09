@@ -1,24 +1,35 @@
 <?php
-//Definimos nuestro carpeta principal.
-define('PROJECT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/ProyectoEstacionamientos_3B/');
-define('PROJECT_URL_ROOT', '/ProyectoEstacionamientos_3B/');
+// Extraemos todos las variables de SESSION.
+session_start();
+echo $_SESSION['usuarioNuevo'];
+echo $_SESSION['correoNuevo'];
+echo $_SESSION['contraNueva'];
+echo $_SESSION['nombreEmpresa'];
+echo $_SESSION['emailEmpresa'];
+echo $_SESSION['direccionEmpresa'];
+echo $_SESSION['paisEmpresa'];
+echo $_SESSION['estadoEmpresa'];
+echo $_SESSION['ciudadEmpresa'];
+echo $_SESSION['codigoEmpresa'];
+echo $_SESSION['telEmpresa'];
 
-//Incluimos la clase cliente y usuario para crear el objeto.
-include(PROJECT_ROOT.'/data/class/user.php');
-include(PROJECT_ROOT.'/data/class/client.php');
+//Incluimos nuestras clases.
+include('../data/class/user.php'); // Usuario.
+include('../data/class/client.php'); // Empresa.
+include("../data/class/payment.php"); // Registrar pago.
+include("../data/class/licenses.php");
 
-//Establecemos los valores de los setters de la clase User.
+// +==================================================================+
+// Establecemos los valores de los setters de la clase 'USER'.
 $User = new User();
-$User -> setNickname($_POST["username"]);
-$User -> setEmail($_POST["emailUsuario"]);
-$User -> setPassword($_POST["password"]);
-//Llamamos el metodo y nos retorna el valor de un id de la fila insertada
-// que usaremos como foreign key.
+$User->setNickname($_POST["usuarioNuevo"]);
+$User->setEmail($_POST["correoNuevo"]);
+$User->setPassword($_POST["contraNueva"]);
 
 $resultado = true;
 
-try { //Intentamos ejecutar la inserccion.
-    $fk_user = $User -> setUser();
+try { // Intentamos ejecutar la inserccion.
+    $fk_user = $User->setUser(); // Me retorna el ID insertado.
     $resultado = true;
 } catch (mysqli_sql_exception $e) { //En caso de ocurrir una entrada duplicada como nickname o password.
     // Si hay un error con la inserción, verifica si es por un valor duplicado
@@ -30,31 +41,61 @@ try { //Intentamos ejecutar la inserccion.
         // Si es un error diferente, también deberías manejarlo
         echo 'error';
     }
-}
+} // Fin de las inserciones de la clase 'USER'.
+// +====================================================================+
 
-$id = 0; //Para que no pete la siguiente.
+// +====================================================================+
+$fk_client = 0; // Establecemos el ID del 'CLIENTE'.
 
-if ($resultado) { //Validamos si se inserto el usuario.
-//Establecemos los valores de los setters de la clase Cliente.
-$Client = new Client();
-$Client -> setName($_POST["empresa"]);
-$Client -> setEmail($_POST["email"]);
-$Client -> setAddress($_POST["direccion"]);
-$Client -> setCountry($_POST["pais"]);
-$Client -> setCity($_POST["ciudad"]);
-$Client -> setState($_POST["estado"]);
-$Client -> setZipCode($_POST["postal"]);
-$Client -> setTel($_POST["tel"]);
-$Client -> setFK_user($fk_user);
+if ($resultado) { // Validamos si se inserto el usuario.
+    // Establecemos los valores de los setters de la clase Cliente.
+    $Client = new Client();
+    $Client->setName($_POST["empresa"]);
+    $Client->setEmail($_POST["email"]);
+    $Client->setAddress($_POST["direccion"]);
+    $Client->setCountry($_POST["pais"]);
+    $Client->setCity($_POST["ciudad"]);
+    $Client->setState($_POST["estado"]);
+    $Client->setZipCode($_POST["postal"]);
+    $Client->setTel($_POST["tel"]);
+    $Client->setFK_user($fk_user);
 
-//Llamamos al metodo y nos retorna el valor de un id de la fila insertada.
-$id = $Client -> setClient();
-}
+    //Llamamos al metodo y nos retorna el valor de un id de la fila insertada.
+    $fk_client = $Client->setClient();
+} else { 
+    
+} // Fin de la inserciones del 'CLIENTE'.
+// +=====================================================================+
 
-//Hacemos una validacion rapida para saber si se ha ejecutado correctamente.
-if($id > 0) {
-header('Location: '.PROJECT_URL_ROOT.'view/login.html');
-} else {
-    echo "Error en el registro";
-}
-?>
+// +======================================================================+
+// Establecemos los valores de los setters de la clase payment.
+$payment = new Payment();
+$payment->setAmount($_POST["amount"]);
+$payment->setDescription($_POST["description"]);
+$payment->setDuration($_POST['duration']);
+$payment->setClient($fk_client);
+
+// Realizamos el pago y almacenamos el id de la inserccion realizada.
+$id = $payment->setPayment();
+    
+//    //Validamos que se haya completado exitosamente el pago.
+//    if($id > 0) {
+//     //Creamos nuestra clase de licencias
+//     $license = new Licenses();  
+//     $license -> setDuration($_POST['duration']);
+//     $license -> setPayment($id);
+
+//     $accessCode = $license -> setLicenses(); //Obtenemos el accessCode
+
+//     if ($accessCode > 1){
+//         $user = new User();
+//         $user -> setID($_SESSION['user_id']); //Setteamos el ID de nuestro usuario.
+//         $user->updateAccessCode($accessCode); //Le mandamos el mismo code de la membresia al usuario.
+//         //Redireccionamos
+//         header('Location: '.PROJECT_URL_ROOT.'view/confirmedPay.php');
+//     } else {
+//         echo 'Ha ocurrido un error a la hora de registrar la licencia';
+//     }
+//    } else {
+//     echo 'Ha ocurrido un error a la hora de realizar el pago';
+//    }

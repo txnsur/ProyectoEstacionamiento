@@ -18,7 +18,7 @@
                   Creamos este software personalizado para empresas con visión de futuro, ayudándolas a acelerar el crecimiento y convertirse en líderes tecnológicos.
                 </p>
               </div>
-            </div
+        </div>
           </div>
         </div>
         <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden" style="height: 70px;">

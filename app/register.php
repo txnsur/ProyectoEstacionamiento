@@ -19,6 +19,8 @@ include('../data/class/client.php'); // Empresa.
 include("../data/class/payment.php"); // Registrar pago.
 include("../data/class/licenses.php");
 
+// Efra eres un pendejo
+
 // +==================================================================+
 // Establecemos los valores de los setters de la clase 'USER'.
 $User = new User();
@@ -62,8 +64,7 @@ if ($resultado) { // Validamos si se inserto el usuario.
 
     //Llamamos al metodo y nos retorna el valor de un id de la fila insertada.
     $fk_client = $Client->setClient();
-} else { 
-    
+} else {
 } // Fin de la inserciones del 'CLIENTE'.
 // +=====================================================================+
 
@@ -77,13 +78,14 @@ $payment->setClient($fk_client);
 
 // Realizamos el pago y almacenamos el id de la inserccion realizada.
 $id = $payment->setPayment();
-    
-//    //Validamos que se haya completado exitosamente el pago.
-//    if($id > 0) {
-//     //Creamos nuestra clase de licencias
-//     $license = new Licenses();  
-//     $license -> setDuration($_POST['duration']);
-//     $license -> setPayment($id);
+
+//Validamos que se haya completado exitosamente el pago.
+if ($id > 0) {
+    //Creamos nuestra clase de licencias
+    $license = new Licenses();
+    $license->setDuration($_POST['duration']);
+    $license->setPayment($id);
+}
 
 //     $accessCode = $license -> setLicenses(); //Obtenemos el accessCode
 

@@ -12,5 +12,5 @@ Notification.requestPermission().then(permission => {
 });
 
 setTimeout(function() {
-    window.location.href = '../view/loginAcceso.php';
+    window.location.href = '../view/login.php';
 }, 0); // espera 5 segundos antes de redirigir

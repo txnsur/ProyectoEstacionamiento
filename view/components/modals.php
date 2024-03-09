@@ -92,7 +92,6 @@
     }
 </script>
 
-
 <dialog id="my_modal_2" class="modal bg-black-300 text-white">
     <div class="modal-box">
         <h3 class="font-bold text-lg">Confirmando compra...</h3>
@@ -105,6 +104,12 @@
     </div>
 </dialog>
 
+<script>
+    function iniciarSesion() {
+        iniciar.showModal();
+        
+    }
+</script>
 <dialog id="iniciar" class="modal bg-black-300 text-white">
     <div class="modal-box">
         <h3 class="font-bold text-lg">Verificando...</h3>
@@ -138,23 +143,11 @@
         }, 5000); // 2000 milisegundos = 2 segundos
     }
 
-    function iniciarSesion() {
-        iniciar.showModal();
-
-        setTimeout(function() {
-            cuentaEncontrada.showModal();
-        }, 2000); // 2000 milisegundos = 2 segundos
-
-        setTimeout(function() {
-            window.location.href = "client/dashboard.php";
-        }, 3000); // 2000 milisegundos = 2 segundos
-    }
-
     function cerrarSesion() {
         logout.showModal();
 
         setTimeout(function() {
-            window.location.href = "../../index.php";
+            window.location.href = "../../app/logOut.php";
         }, 3000); // 2000 milisegundos = 2 segundos
     }
 </script>

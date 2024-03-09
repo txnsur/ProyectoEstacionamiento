@@ -1,20 +1,20 @@
 <?php
 // Extraemos todos las variables de SESSION.
 session_start();
-echo $_SESSION['usuarioNuevo'] . "<br>";
-echo $_SESSION['correoNuevo'] . "<br>";
-echo $_SESSION['contraNueva'] . "<br>";
-echo $_SESSION['nombreEmpresa'] . "<br>";
-echo $_SESSION['emailEmpresa'] . "<br>";
-echo $_SESSION['direccionEmpresa'] . "<br>";
-echo $_SESSION['paisEmpresa'] . "<br>";
-echo $_SESSION['estadoEmpresa'] . "<br>";
-echo $_SESSION['ciudadEmpresa'] . "<br>";
-echo $_SESSION['codigoEmpresa'] . "<br>";
-echo $_SESSION['telEmpresa'] . "<br>";
-echo $_POST['amount'] . "<br>";
-echo $_POST['description'] . "<br>";
-echo $_POST['duration'] . "<br>";
+// echo $_SESSION['usuarioNuevo'] . "<br>";
+// echo $_SESSION['correoNuevo'] . "<br>";
+// echo $_SESSION['contraNueva'] . "<br>";
+// echo $_SESSION['nombreEmpresa'] . "<br>";
+// echo $_SESSION['emailEmpresa'] . "<br>";
+// echo $_SESSION['direccionEmpresa'] . "<br>";
+// echo $_SESSION['paisEmpresa'] . "<br>";
+// echo $_SESSION['estadoEmpresa'] . "<br>";
+// echo $_SESSION['ciudadEmpresa'] . "<br>";
+// echo $_SESSION['codigoEmpresa'] . "<br>";
+// echo $_SESSION['telEmpresa'] . "<br>";
+// echo $_POST['amount'] . "<br>";
+// echo $_POST['description'] . "<br>";
+// echo $_POST['duration'] . "<br>";
 
 // Incluimos nuestras clases.
 include('../data/class/user.php'); // Usuario.
@@ -37,8 +37,11 @@ try { // Intentamos ejecutar la inserccion.
     // Si hay un error con la inserción, verifica si es por un valor duplicado
     $resultado = false;
     if ($e->getCode() === 1062) {
-        // Enviar una respuesta que tu JavaScript pueda entender y manejar
-        echo 'duplicate';
+        echo "
+        <script>
+            alert('¡Ups! El nombre de usuario o correo electrónico ya está registrado. Por favor, elige otros.');
+            window.location.href = '../view/login.php'; // Redireccionar a login.php
+        </script>";
     } else {
         // Si es un error diferente, también deberías manejarlo
         echo 'Error con la inserccion del usuario';

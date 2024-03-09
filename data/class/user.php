@@ -1,6 +1,6 @@
 <?php //user.php 
     //Incluimos la conexion.
-    include_once(PROJECT_ROOT.'/data/conexion.php');
+    include_once(__DIR__.'\..\conexion.php');
 
     //creamos la clase para nuestra tabla
     class User extends conexion{
@@ -102,7 +102,7 @@
             $query = "INSERT INTO User (first_name, last_name, password, email, nickname, category) VALUES ('".$this->first_name."', '".$this->last_name."', '".$this->password."', '".$this->email."', '".$this->nickname."','C')";
             $result = $this->connect();
             if($result) {
-                echo "Ha funcionado el registro de usuario "; 
+                echo "Ha funcionado el registro de usuario"; 
                 $newID = $this->execinsert($query);
             } else {
                 echo "algo salio mal";

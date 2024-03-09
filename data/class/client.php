@@ -1,6 +1,6 @@
 <?php //client.php 
     //Incluimos la conexion.
-    include_once(PROJECT_ROOT . "data/conexion.php");
+    include_once(__DIR__."\..\conexion.php");
 
     //Creamos la clase para nuestra tabla
     class Client extends conexion{

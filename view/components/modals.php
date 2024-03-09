@@ -22,6 +22,7 @@
 
         // Lógica para obtener y mostrar detalles según la membresía
         var details = getMembershipDetails(membership);
+        var post = getMembershipPost(membership);
 
         // Actualiza el contenido del modal
         modalContent.innerHTML = `
@@ -31,7 +32,8 @@
             <h3 class="font-bold text-lg">${membership}</h3>
             <p class="py-6">${details}</p>
             <div class="modal-action">
-                <form method="dialog">
+                <form method="post" action="../app/register.php">
+                    ${post}
                     <button class="btn" onclick="confirmarCompra()">Confirmar compra</button>
                 </form>
             </div>
@@ -59,6 +61,31 @@
                 return 'Licencia Empresarial Estándar<br>Gestión Avanzada de Espacios<br>Informe de Ocupación en Tiempo Real<br>Soporte Técnico 24/7.';
             case 'Pro':
                 return 'Licencia Empresarial Avanzada<br>Gestión Integral de Estacionamientos<br>Informe de Ocupación en Tiempo Real<br>Soporte Técnico Prioritario 24/7<br>Integración con Sistemas de Seguridad.';
+            default:
+                return '';
+        }
+    }
+    // Función para obtener detalles de membresía
+    function getMembershipPost(membership) {
+        // Lógica para obtener detalles según la membresía seleccionada
+        // Puedes almacenar y recuperar detalles desde un servidor, base de datos, etc.
+        // Por ahora, simplemente devolveré un mensaje fijo para cada membresía.
+        switch (membership) {
+            case 'Basica':
+                return `
+                <input type="hidden" name="amount" value="200"> 
+                <input type="hidden" name="description"  value="Licencia Basica"> 
+                <input type="hidden" name="duration" value="1">`;
+            case 'Regular':
+                return `
+                <input type="hidden" name="amount" value="500"> 
+                <input type="hidden" name="description"  value="Licencia Regular"> 
+                <input type="hidden" name="duration" value="5">`;
+            case 'Pro':
+                return `
+                <input type="hidden" name="amount" value="600"> 
+                <input type="hidden" name="description"  value="Licencia Pro"> 
+                <input type="hidden" name="duration" value="9">`;
             default:
                 return '';
         }

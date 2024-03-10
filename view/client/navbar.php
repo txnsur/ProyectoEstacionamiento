@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-
+<?php include_once (__DIR__.'/../../app/session.php'); ?>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <link rel="stylesheet" href="../../css/output.css">
   <title>Dashboard | Parking Manager</title>
-
 </head>
 
 <body class="text-blueGray-700 antialiased">
@@ -25,7 +24,7 @@
         <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden" id="example-collapse-sidebar">
           <ul class="md:flex-col md:min-w-full flex flex-col list-none">
             <li class="items-center hover:bg-gray-100">
-              <a href="dashboard.php" class=" text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"><i class="fas fa-tv opacity-75 mr-2 text-sm"></i>
+              <a href="dashboard.php" class="hover:text-pink-600 text-xs uppercase py-3 font-bold block"><i class="fas fa-tv opacity-75 mr-2 text-sm"></i>
                 Dashboard</a>
             </li>
             <li class="items-center hover:bg-gray-100">
@@ -37,7 +36,7 @@
                 Carros</a>
             </li>
             <li class="items-center hover:bg-gray-100">
-              <a href="empleados.php" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
+              <a href="empleados.php" id="empleadosLink" class="hover:text-pink-600 text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
                 Empleados</a>
             </li>
             <li class="items-center hover:bg-gray-100">

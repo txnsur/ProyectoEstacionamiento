@@ -1,20 +1,18 @@
 <?php
-define('PROJECT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/ProyectoEstacionamientos_3B/');
-define('PROJECT_URL_ROOT', '/ProyectoEstacionamientos_3B/');
 
 // Incluimos las clases necesarias
-include(PROJECT_ROOT.'/data/class/accesscard.php');
-include(PROJECT_ROOT.'/data/class/employee.php');
-include_once(PROJECT_ROOT.'/data/conexion.php');
+include(__DIR__.'/../../../data/class/accesscard.php');
+include(__DIR__.'/../../../data/class/employee.php');
+include_once(__DIR__.'/../../../data/conexion.php');
 
 session_start();
 
 // Establecemos los valores de los setters para el nuevo empleado
 $employee = new Employee();
-$employee->setName($_POST["name"]);
-$employee->setLastNameP($_POST["paterno"]);
-$employee->setLastNameM($_POST["materno"]);
-$employee->setRol($_POST["rol"]);
+$employee->setName($_POST["nombreEmpleado"]);
+$employee->setLastNameP($_POST["apPaternoEmpleado"]);
+$employee->setLastNameM($_POST["apMaternoEmpleado"]);
+$employee->setRol($_POST["rolEmpleado"]);
 $employee->setFKclient($_SESSION['client_id']);
 
 // Insertamos el empleado en la base de datos
@@ -66,7 +64,7 @@ if ($id > 0) {
     
             if ($insert_success) {
                 // Redirigir o mostrar un mensaje de éxito
-                header('Location: ' . PROJECT_URL_ROOT . 'view/client/empleados.php');
+                header('Location: ' . __DIR__ . '/../../../view/client/empleados.php');
                 exit(); // Finalizar el script después de redirigir
             } else {
                 echo 'No se pudo generar la tarjeta de acceso.';
@@ -80,4 +78,4 @@ if ($id > 0) {
 } else {
     echo "No se pudo insertar el empleado.";
 }
-?>
+

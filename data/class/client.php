@@ -67,8 +67,9 @@
         public function getClientByUser($fk_user){
             $result = $this->connect();
             if ($result == true){
-                //echo "vammos bien";
+                // echo "Funciono la consulta en Cliente por filtro de Usuario";
                 $dataset = $this->execquery("SELECT * FROM Client WHERE fk_user = $fk_user");
+                // print_r($dataset);
             }
             else{
                 echo "algo fallo";

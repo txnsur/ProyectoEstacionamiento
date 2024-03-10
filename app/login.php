@@ -43,8 +43,8 @@ if ($usuarioExiste != 'error' && $tupla['category'] == 'A') {
     $_SESSION['mail'] = $tupla['email'];
 
     //echo "Eres cliente (empresa)";
-    //echo $_SESSION['user_id']; //Ver id del usuario.
-    //echo $_SESSION['user']; //Ver el nombre del usuario.
+    echo $_SESSION['user_id']; //Ver id del usuario.
+    echo $_SESSION['user']; //Ver el nombre del usuario.
 
     //Le mandamos el nombre de usuario a nuestro javascript.
     header('Content-type: text/html; charset=utf-8');

@@ -1,4 +1,4 @@
-<!--Modales-->
+<!--MODAL CON LOS DETALLES DE LA COMPRA-->
 <dialog id="my_modal_1" class="modal bg-black-300 text-white">
     <div class="modal-box">
         <form method="dialog">

@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         'principal': '#696969',
         'azul-oscuro': '#0d1b3e',
+        'azul-principal': 'rgb(17 24 39 / var(--tw-bg-opacity)',
       }
     },
   },

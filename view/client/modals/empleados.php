@@ -5,7 +5,7 @@
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
         <h3 class="font-bold text-lg">Añadir empleado</h3>
-        <div class="modal-action">
+        <div class="modal-action  flex flex-col items-center">
             <form method="post" action="../../app/client/empleados/addEmployee.php">
                 <div class="avatar flex justify-center items-center relative">
                     <input type="file" id="imagenEmpleado" class="hidden" accept="image/*" onchange="mostrarImagen(this)">
@@ -16,36 +16,47 @@
                     </label>
                 </div>
                 <div class="m-2">
-                    <label for="nombreEmpleado">Nombre del empleado</label>
-                    <input type="text" name="nombreEmpleado"><br>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Nombre:
+                        <input name="nombreEmpleado" type="text" class="grow" />
+                    </label>
                 </div>
                 <div class="m-2">
-                    <label for="nombreEmpleado">Apellido paterno del empleado</label>
-                    <input type="text" name="apPaternoEmpleado"><br>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Apellido paterno:
+                        <input name="apPaternoEmpleado" type="text" class="grow" />
+                    </label>
                 </div>
                 <div class="m-2">
-                    <label for="nombreEmpleado">Apellido materno del empleado</label>
-                    <input type="text" name="apMaternoEmpleado"><br>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Apellido materno:
+                        <input name="apMaternoEmpleado" type="text" class="grow" />
+                    </label>
                 </div>
-                <div>
-                    <label for="">Rol</label>
-                    <select name="rolEmpleado">;
-                        <option value="1">Gerente de Planta</option>;
-                        <option value="2">Gerente de produccion</option>;
-                        <option value="3">Gerente de recursos</option>;
-                        <option value="4">Secretaria</option>;
-                        <option value="5">Supervisor</option>;
-                        <option value="6">Empleado</option>;
-                        <option value="7">Administrador</option>;
-                        <option value="8">Recursos HUmanos</option>;
-                        <option value="9">Finanzas</option>;
-                        <option value="10">Mantenimiento</option>;
-                        <option value="11">Seguridad</option>;
-                        <option value="12">Maquinado</option>;
-                    </select>
+                <div class="m-2">
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                            <span class="label-text">Rol del empleado</span>
+                        </div>
+                        <select class="select select-bordered" name="rolEmpleado">
+                            <option disabled selected>Selecciona un rol</option>
+                            <option value="1">Gerente de Planta</option>
+                            <option value="2">Gerente de produccion</option>
+                            <option value="3">Gerente de recursos</option>
+                            <option value="4">Secretaria</option>
+                            <option value="5">Supervisor</option>
+                            <option value="6">Empleado</option>
+                            <option value="7">Administrador</option>
+                            <option value="8">Recursos HUmanos</option>
+                            <option value="9">Finanzas</option>
+                            <option value="10">Mantenimiento</option>
+                            <option value="11">Seguridad</option>
+                            <option value="12">Maquinado</option>
+                        </select>
+                    </label>
                 </div>
                 <div class="flex justify-end">
-                    <input type="submit" value="Enviar" class="cursor-pointer mt-5">
+                    <input type="submit" value="Enviar" class="cursor-pointer mt-5 btn btn-outline btn-info p-2 pl-4 pr-4">
                 </div>
             </form>
         </div>
@@ -100,10 +111,10 @@
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
         <h3 class="font-bold text-lg">Actualizar empleado</h3>
-        <div class="modal-action">
+        <div class="modal-action flex flex-col items-center">
             <form method="post" action="../../app/client/empleados/editEmployee.php">
                 <div>
-                <input type="number" name="idEmpleado" value="${id}">
+                    <input name="idEmpleado" type="number" class="grow hidden" value="${id}" />
                 </div>
                 <div class="avatar flex justify-center items-center relative">
                     <input type="file" id="imagenEmpleado" class="hidden" accept="image/*" onchange="mostrarImagen(this)">
@@ -114,20 +125,29 @@
                     </label>
                 </div>
                 <div class="m-2">
-                    <label for="nombreEmpleado">Nombre del empleado</label>
-                    <input type="text" name="nombreEmpleado" value="${nombre}"><br>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Nombre:
+                        <input name="nombreEmpleado" type="text" class="grow" value="${nombre}" />
+                    </label>
                 </div>
                 <div class="m-2">
-                    <label for="nombreEmpleado">Apellido paterno del empleado</label>
-                    <input type="text" name="apPaternoEmpleado" value="${apPaterno}"><br>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Apellido paterno:
+                        <input name="apPaternoEmpleado" type="text" class="grow" value="${apPaterno}" />
+                    </label>
                 </div>
                 <div class="m-2">
-                    <label for="nombreEmpleado">Apellido materno del empleado</label>
-                    <input type="text" name="apMaternoEmpleado" value="${apMaterno}"><br>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Nombre:
+                        <input name="apMaternoEmpleado" type="text" class="grow" value="${apMaterno}" />
+                    </label>
                 </div>
                 <div>
-                    <label for="rolEmpleado">Rol</label>
-                    <select name="rolEmpleado">
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                            <span class="label-text">Rol del empleado</span>
+                        </div>
+                        <select class="select select-bordered" name="rolEmpleado">
                         <option value="1" ${rol === 'Gerente de Planta' ? 'selected' : ''}>Gerente de Planta</option>
                         <option value="2" ${rol === 'Gerente de produccion' ? 'selected' : ''}>Gerente de produccion</option>
                         <option value="3" ${rol === 'Gerente de recursos' ? 'selected' : ''}>Gerente de recursos</option>
@@ -140,10 +160,11 @@
                         <option value="10" ${rol === 'Mantenimiento' ? 'selected' : ''}>Mantenimiento</option>
                         <option value="11" ${rol === 'Seguridad' ? 'selected' : ''}>Seguridad</option>
                         <option value="12" ${rol === 'Maquinado' ? 'selected' : ''}>Maquinado</option>
-                    </select>
+                        </select>
+                    </label>
                 </div>
                 <div class="flex justify-end">
-                    <input type="submit" value="Enviar" class="cursor-pointer mt-5">
+                    <input type="submit" value="Enviar" class="cursor-pointer mt-5 btn btn-outline btn-info p-2 pl-4 pr-4">
                 </div>
             </form>
         </div>`;

@@ -18,16 +18,36 @@ $employees = $employee->getEmployee();
         <div class="relative md:pt-32 pb-32 pt-12">
             <div class="px-4 md:px-10 mx-auto w-full">
                 <div>
-                    <section class=" w-full">
-                        <div class="">
-                            <button class="text-white" onclick="agregarEmpleado()"> + Añadir empleado</button>
+                    <!--Inicio de la barrita de navegacion-->
+                    <div class="navbar bg-base-300 rounded-box mb-5">
+                        <div class="flex-1 px-2 lg:flex-none">
+                        <button class="btn h-8 min-h-8 btn-outline btn-info" onclick="agregarEmpleado()"> + Añadir empleado</button>
                         </div>
-                    </section>
+                        <div class="flex-1 px-2 lg:flex-none">
+                        <button class="btn h-8 min-h-8h-8 min-h-8 btn-outline btn-primary" onclick="">Ultimos 30 dias</button>
+                        </div>
+                        <div class="flex-1 px-2 lg:flex-none">
+                        <button class="btn h-8 min-h-8 btn-outline btn-primary" onclick="">Filtrar por</button>
+                        </div>
+                        <div class="flex justify-end flex-1 px-2">
+                            <div class="flex items-stretch">
+                                <a class="btn h-8 min-h-8 btn-ghost rounded-btn">Button</a>
+                                <div class="dropdown dropdown-end">
+                                    <div tabindex="0" role="button" class="btn h-8 min-h-8 btn-ghost rounded-btn">Config</div>
+                                    <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                                        <li><a>Item 1</a></li>
+                                        <li><a>Item 2</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="overflow-x-auto">
-                        <table class="table bg-gray-600">
+                        <table class="table bg-gray-700">
                             <!-- head -->
                             <thead>
-                                <tr>
+                                <tr class="font-semibold text-base">
                                     <th>ID</th>
                                     <th>Photo</th>
                                     <th>Nombre</th>
@@ -38,16 +58,14 @@ $employees = $employee->getEmployee();
                             <tbody>
                                 <!-- row 1 -->
                                 <?php while ($row = mysqli_fetch_assoc($employees)) { ?>
-                                    <tr>
+                                    <tr class="text-base">
                                         <!--ID del empleado-->
                                         <td><?php echo $row['pk_employee'] ?></td>
                                         <!--Foto del empleado-->
                                         <td>
-                                            <div class="flex items-center gap-3">
-                                                <div class="avatar">
-                                                    <div class="mask mask-squircle w-12 h-12">
-                                                        <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                                    </div>
+                                            <div class="avatar online">
+                                                <div class="w-16 rounded-full">
+                                                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                                 </div>
                                             </div>
                                         </td>
@@ -56,13 +74,13 @@ $employees = $employee->getEmployee();
                                             <?php echo $row['employee_name'] ?>
                                             <br />
                                             <!--Rol del empleado-->
-                                            <span class="badge badge-ghost badge-sm"><?php echo $row['rol_name'] ?></span>
+                                            <span class="p-3 badge badge-ghost badge-sm"><?php echo $row['rol_name'] ?></span>
                                         </td>
                                         <!--Apellidos del empleado-->
                                         <td><?php echo $row['employee_lastNameP'] . ' ' . $row['employee_lastNameM'] ?></td>
                                         <!--Ver detalles del empleado-->
                                         <td>
-                                            <button class="btn btn-ghost btn-xs" onclick="actualizarEmpleado(
+                                            <button class="btn btn-outline btn-success btn-xs" onclick="actualizarEmpleado(
                                                 '<?php echo $row['pk_employee']; ?>',
                                                 '<?php echo $row['employee_name']; ?>',
                                                 '<?php echo $row['employee_lastNameP']; ?>',

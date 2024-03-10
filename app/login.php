@@ -8,13 +8,13 @@ $myUser = new User();
 //Hacemos la consulta en busca de nuestro usuario.
 $myUser->setNickname($_POST['user']);
 $myUser->setPassword($_POST['password']);
-$usuarioExiste = $myUser->getUser();
+$usuarioExiste = $myUser->getAllUser();
 
 $tupla = mysqli_fetch_assoc($usuarioExiste); //Capturamos los valores de la fila de la consulta.
 
 //Inicimos el proceso de busqueda.
 if ($usuarioExiste != 'error' && $tupla['category'] == 'A') {
-    $count = mysqli_num_rows($dataSet); //Contamos si encontro una coincidencia.
+    $count = mysqli_num_rows($usuarioExiste); //Contamos si encontro una coincidencia.
     if ($count == 1) { //Si es asi, iniciamos la sesion.
 
         session_start();

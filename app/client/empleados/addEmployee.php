@@ -64,7 +64,7 @@ if ($id > 0) {
     
             if ($insert_success) {
                 // Redirigir o mostrar un mensaje de éxito
-                header('Location: ' . __DIR__ . '/../../../view/client/empleados.php');
+                header('Location: ../../../view/client/empleados.php');
                 exit(); // Finalizar el script después de redirigir
             } else {
                 echo 'No se pudo generar la tarjeta de acceso.';

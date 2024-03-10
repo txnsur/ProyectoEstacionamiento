@@ -45,10 +45,20 @@
         public function setFKVisit($fk_visit) {
             $this->fk_visit = $fk_visit; // Asigna el ID de la visita al atributo que representa la visita
         }
-    
-        // Insertar tarjeta de acceso en la base de datos
 
+        public function getAccessCards() {
+            $query = "SELECT * FROM Access_Card";
+            $result = $this->connect();
         
+            if ($result) {
+                $access_cards = $this->execquery($query);
+                return $access_cards;
+            } else {
+                echo "Algo salió mal al intentar obtener las tarjetas de acceso";
+                return "error";
+            }
+        }
+
     
         public function insertAccessCard() {
             $query = "INSERT INTO Access_Card (QR_code, card_creation_date, card_end_date, card_type, fk_employee, fk_status) 
@@ -164,7 +174,6 @@ public function deleteEmployee() {
             return "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
         }
         
-
         public function getAccessCardsByClient($client_id) {
             $query = "SELECT Access_Card.*, Employee.fk_client
                       FROM Access_Card
@@ -180,9 +189,6 @@ public function deleteEmployee() {
                 return "error";
             }
         }
-        
     
         // Otros métodos que puedas necesitar para AccessCard.
     }
-    
-?>

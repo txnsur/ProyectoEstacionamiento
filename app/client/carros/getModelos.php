@@ -17,4 +17,3 @@ if (isset($_GET['marca'])) {
     http_response_code(400);
     echo json_encode(array('error' => 'Parámetros incorrectos'));
 }
-?>

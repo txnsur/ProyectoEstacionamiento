@@ -107,9 +107,6 @@
             return $newID;
         }
 
-         //UPDATE
-        
-        //Metodo para actualizar el cliente.
         public function updateEmployee() {
             $query = 'UPDATE Employee SET  employee_name = "'.$this->name.'", employee_lastNameP = "'.$this->lastNameP.'", employee_lastNameM = "'.$this->lastNameM.'", fk_rol = "'.$this->fk_rol.'" WHERE pk_employee = '.$this->id.'';
             $result = $this->connect();
@@ -123,15 +120,12 @@
             return $newID;
         }
 
-         //Metodo para eliminar el cliente.
          public function deleteEmployee() {
             $query = 'UPDATE Employee SET fk_status = 2 WHERE pk_employee = ' . $this->id . '';
             $result = $this->connect();
             if($result) {
                 echo "Ha funcionado la eliminacion de usuario"; 
                 $newID = $this->execquery($query);
-        
-                // Cambiar el estado de la tarjeta de acceso asociada al empleado eliminado
                 $query_access_card = 'UPDATE Access_Card SET fk_status = 2 WHERE fk_employee = ' . $this->id . '';
                 $result_access_card = $this->execquery($query_access_card);
                 if ($result_access_card) {
@@ -155,7 +149,5 @@
                 return null;
             }
         }
-        
-
     } //Fin de la clase
 ?>

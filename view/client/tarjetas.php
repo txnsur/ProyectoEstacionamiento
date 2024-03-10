@@ -4,7 +4,6 @@
     <div class="px-4 md:px-10 mx-auto w-full">
         <div>
             <div class="navbar bg-base-300 rounded-box mb-5">
-                <!-- Botón para agregar empleado -->
                 <div class="flex-1 px-2 lg:flex-none">
                     <button class="btn h-8 min-h-8 btn-outline btn-info" onclick="agregarEmpleado()"> + Añadir empleado</button>
                 </div>
@@ -17,6 +16,12 @@
                     <button class="btn h-8 min-h-8 btn-outline btn-primary" onclick="">Filtrar por</button>
                 </div>
                 <!-- Dropdown de configuración -->
+                <div class="flex-1 px-2 lg:flex-none">
+                    <button class="btn h-8 min-h-8h-8 min-h-8 btn-outline btn-primary" onclick="">Ultimos 30 días</button>
+                </div>
+                <div class="flex-1 px-2 lg:flex-none">
+                    <button class="btn h-8 min-h-8 btn-outline btn-primary" onclick="">Filtrar por</button>
+                </div>
                 <div class="flex justify-end flex-1 px-2">
                     <div class="flex items-stretch">
                         <a class="btn h-8 min-h-8 btn-ghost rounded-btn">Config</a>
@@ -50,10 +55,11 @@
 
                         $accessCard = new AccessCard();
 
-                        // Obtener el client_id de la sesión
                         $client_id = $_SESSION['client_id'];
 
-                        // Obtener las tarjetas de acceso asociadas al cliente
+          
+                        $client_id = $_SESSION['client_id'];
+
                         $accessCards = $accessCard->getAccessCardsByClient($client_id);
 
                         if ($accessCards != "error" && mysqli_num_rows($accessCards) > 0) {
